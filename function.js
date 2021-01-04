@@ -491,7 +491,7 @@ function enableDisableSaveProgressButton(){
             saveProgressButton.classList.remove('saveProgressDisabled');
         }
     } */
-    console.log(localStorage.getItem('selectedSaveDay'));
+    console.log(localStorage.getItem('selectedSaveDay') === null);
 }
 
 function instructions(){
