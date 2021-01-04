@@ -492,6 +492,7 @@ function enableDisableSaveProgressButton(){
         }
     } */
     console.log(localStorage.getItem('selectedSaveDay') === null);
+    console.log(`5 = 5 is ${5 = 5}`);
 }
 
 function instructions(){
