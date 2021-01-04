@@ -479,7 +479,7 @@ function saveProgress(event){
 }
 
 function enableDisableSaveProgressButton(){
-    if (localStorage.getItem('selectedSavedDay' === "" || localStorage.getItem('selectedSavedDay') === null)){
+    if (localStorage.getItem('selectedSavedDay') === "" || localStorage.getItem('selectedSavedDay') === null){
         saveProgressButton.classList.add('saveProgressDisabled');
         saveProgressButton.classList.remove('saveProgressEnabled');
     } else {
