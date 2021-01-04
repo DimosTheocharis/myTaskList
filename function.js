@@ -479,7 +479,7 @@ function saveProgress(event){
 }
 
 function enableDisableSaveProgressButton(){
-    if (localStorage.getItem('selectedSavedDay') === "" || localStorage.getItem('selectedSavedDay') === null){
+    /*if (localStorage.getItem('selectedSavedDay') === "" || localStorage.getItem('selectedSavedDay') === null){
         saveProgressButton.classList.add('saveProgressDisabled');
         saveProgressButton.classList.remove('saveProgressEnabled');
     } else {
@@ -490,11 +490,10 @@ function enableDisableSaveProgressButton(){
             saveProgressButton.classList.add('saveProgressEnabled');
             saveProgressButton.classList.remove('saveProgressDisabled');
         }
-    }
+    } */
+    console.log(localStorage.getItem('selectedSaveDay'));
 }
 
 function instructions(){
     window.location = "https://dimostheocharis.github.io/myTaskList/instructions.html";
 }
-
-console.log(localStorage.getItem('selectedSaveDay'));
