@@ -497,20 +497,4 @@ function instructions(){
     window.location = "https://dimostheocharis.github.io/myTaskList/instructions.html";
 }
 
-/*let savedDays = {
-    monday : ["hello", "eksi"],
-    tuesday : ["noo", "efta"],
-}
-
-
-let keys = Object.keys(savedDays);
-let values = Object.values(savedDays);
-keys.forEach(key => {
-    console.log(`${key}: ${savedDays[key]}`)
-}) 
-<div class="savedDay">
-                    <li class="savedDayLi">Hello</li>
-                    <button class="loader">Load</button>
-                    <button class="deletor"><i class="fas fa-trash"></i></button>
-                </div>
-*/
+console.log(localStorage.getItem('selectedSaveDay'));
