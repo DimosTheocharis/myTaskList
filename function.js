@@ -479,7 +479,7 @@ function saveProgress(event){
 }
 
 function enableDisableSaveProgressButton(){
-    /*if (localStorage.getItem('selectedSavedDay') === "" || localStorage.getItem('selectedSavedDay') === null){
+    if (localStorage.getItem('selectedSavedDay') === null || localStorage.getItem('selectedSavedDay') === ""){
         saveProgressButton.classList.add('saveProgressDisabled');
         saveProgressButton.classList.remove('saveProgressEnabled');
     } else {
@@ -490,9 +490,7 @@ function enableDisableSaveProgressButton(){
             saveProgressButton.classList.add('saveProgressEnabled');
             saveProgressButton.classList.remove('saveProgressDisabled');
         }
-    } */
-    console.log(localStorage.getItem('selectedSaveDay') === null);
-    console.log(`5 = 5 is ${5 === 5}`);
+    } 
 }
 
 function instructions(){
