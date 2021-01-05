@@ -85,29 +85,21 @@ function addTodo(event){
         todoInput.value = "";
         addTodoToLocalStorage(todoLi.innerText,todoDiv.classList[1],indexOfFirstCompletedElement);
         statistics();
-        if (todoList.clientHeight > 0.4*screen.height){
-            todoList.style.overflowY = "scroll";
-        } else {
-            todoList.style.overflowY = "visible";
-        } 
+        checkTodoListDisplay();
     }
 }
 
 function trashCheck(event){
     let item = event.target;
     if (item.classList[0] === "todo-trash"){
-        item.parentNode.classList.add('deleted');
-        item.addEventListener('transitionend', function(){
+        item.parentElement.classList.add('deleted');
+        item.parentElement.addEventListener('transitionend', function(){
             item.parentNode.remove();
             deleteTodoFromLocalStorage(item.parentNode);
             statistics();
             // tsekare an prepei na emfaniseis to scroll bar h oxi
-            if (todoList.clientHeight > 0.4*screen.height){
-                todoList.style.overflowY = "scroll";
-            } else {
-                todoList.style.overflowY = "visible";
-            } 
-        })
+            checkTodoListDisplay();
+        }) 
     } else if (item.classList[0] === "todo-check"){
         let parent = item.parentNode;
         item.remove();
@@ -263,6 +255,7 @@ function loadTodosFromLocalStorage(){
     }
     loadSelectedSavedDay();
     enableDisableSaveProgressButton();
+    checkTodoListDisplay()
 }
 
 function clearAll(event){
@@ -450,6 +443,7 @@ function loadDeleteSavedDay(event){
             todoList.appendChild(todoDiv);
         
         }
+        todoFilter.value = "all";
         statistics()
         loadSelectedSavedDay();
         enableDisableSaveProgressButton();
@@ -495,4 +489,12 @@ function enableDisableSaveProgressButton(){
 
 function instructions(){
     window.location = "https://dimostheocharis.github.io/myTaskList/instructions.html";
+}
+
+function checkTodoListDisplay(){
+    if (todoList.childNodes.length > 6){
+        todoList.style.overflowY = "scroll";
+    } else {
+        todoList.style.overflowY = "visible";
+    }
 }

@@ -228,7 +228,7 @@ select{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    transition: all 1.3s ease;
+    transition: all 1.0s ease;
 }
 
 .uncompleted {background-color: rgb(197, 79, 79);}
