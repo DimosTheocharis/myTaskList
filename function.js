@@ -41,6 +41,7 @@ saveButton.addEventListener("click", (event)=> {
     event.preventDefault();
     todoList.style.display = "none";
     saveMessageContainer.style.display = "block";
+    todoFilter.value = "all";
 })
 instructionsButton.addEventListener('click', instructions);
 
@@ -269,6 +270,7 @@ function clearAll(event){
     localStorage.setItem("TodosValues", "[]");
     localStorage.setItem('TodosClasses', "[]");
     localStorage.setItem('selectedSavedDay', "");
+    todoFilter.value = "all";
     statistics();
     enableDisableSaveProgressButton();
 }
@@ -468,7 +470,7 @@ function saveProgress(event){
         savedDays[selectedSavedDay][1] = JSON.parse(localStorage.getItem('TodosClasses'));
         localStorage.setItem('SavedDays', JSON.stringify(savedDays));
         clearAll(event);
-
+        todoFilter.value = "all";
     }
 }
 
