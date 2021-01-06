@@ -449,6 +449,7 @@ function loadDeleteSavedDay(event){
         statistics()
         loadSelectedSavedDay();
         enableDisableSaveProgressButton();
+        checkTodoListDisplay();
     } else if (item.classList[0] === "deletor"){
         let nameDay = item.parentNode.childNodes[0].innerText;
         let savedDays = JSON.parse(localStorage.getItem('SavedDays'));
